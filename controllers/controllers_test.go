@@ -7,7 +7,7 @@ import (
 
 func TestObterListaRomanos(t *testing.T) {
 	texto := "AXXBLX"
-	esperado := []string{"XXX", "LX"}
+	esperado := []string{"XX", "LX"}
 	sliceRomanos := []string{}
 	var cont uint64
 	var numeroRomano, algarismoAnterior string
@@ -43,7 +43,7 @@ func TestObterListaRomanos(t *testing.T) {
 func TestConverterNumero(t *testing.T) {
 
 	esperado := 60
-	romano := "LXX"
+	romano := "LX"
 	var resultado, unidadeAcumulada int
 
 	for i := len(romano) - 1; i >= 0; i-- {
@@ -63,7 +63,7 @@ func TestConverterNumero(t *testing.T) {
 func TestObterMaiorNum(t *testing.T) {
 	lista := []string{"XX", "LX"}
 	esperadoRom := "LX"
-	esperadoInt := 100
+	esperadoInt := 60
 
 	maiorNumRom := ""
 	maiorNumInt := 0

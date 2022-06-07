@@ -1,0 +1,42 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/search": {
+            "post": {
+                "description": "Identifica todos os algarismos romanos possíveis em uma palavra, converte para decimal e retorna o maior número. Exemplos de entrada: {\\\"text\\\": \\\"ALEXANDERMMDLXXVI\\\"}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "romanos"
+                ],
+                "summary": "Devolve o maior número romano em uma palavra",
+                "parameters": [
+                    {
+                        "description": "json de entrada",
+                        "name": "entrada",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}

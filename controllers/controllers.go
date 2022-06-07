@@ -101,6 +101,16 @@ func ObterMaiorNum(lista []string) (string, int) {
 	return maiorNumRom, maiorNumInt
 }
 
+// Search godoc
+// @Summary Devolve o maior número romano em uma palavra
+// @Description Identifica todos os algarismos romanos possíveis em uma palavra, converte para decimal e retorna o maior número. Exemplos de entrada: {\"text\": \"ALEXANDERMMDLXXVI\"}
+// @Tags romanos
+// @Param entrada body string true "json de entrada"
+// @Accept json
+// @Produce json
+// @Success 200
+// @Failure 400
+// @Router /search [post]
 func Search(c *gin.Context) {
 	requestBody := RequestBody{}
 	// usando o método BindJson para serializar body com o struct
@@ -109,21 +119,9 @@ func Search(c *gin.Context) {
 		return
 	}
 
-	// listaRomanos := obterListaRomanos("AXXXBLXZMMDLXXVIII")
-	// fmt.Println(ObterMaiorNum(listaRomanos))
 	listaRomanos := ObterListaRomanos(string(requestBody.Text))
-
-	// respBody := ResponsetBody{}
-	// respBody.Number = requestBody.Text
-	// respBody.Value = ObterMaiorNum(listaRomanos)
-	// fmt.Println(ObterMaiorNum(listaRomanos))
-
-	// fmt.Println(body)
-	// c.JSON(http.StatusAccepted, &body)
-
 	number, value := ObterMaiorNum(listaRomanos)
-
-	c.JSON(http.StatusAccepted, gin.H{
+	c.JSON(http.StatusOK, gin.H{
 		"number": number,
 		"value":  value,
 	})
