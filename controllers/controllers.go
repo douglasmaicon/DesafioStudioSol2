@@ -26,12 +26,7 @@ type RequestBody struct {
 	Text string `json:"text"`
 }
 
-// type ResponsetBody struct {
-// 	Number string `json:"number"`
-// 	Value  int    `json:"value`
-// }
-
-func obterListaRomanos(texto string) []string {
+func ObterListaRomanos(texto string) []string {
 	sliceRomanos := []string{}
 	var cont uint64
 	var numeroRomano, algarismoAnterior string
@@ -73,7 +68,7 @@ digitoCorrespondente = equivalência do algarismo romano em decimais
 unidadeAcumulada = valor acumulado da operação de soma para determinar se é unidade, dezena, centena, etc...
 resultado = numero convertido
 */
-func converterNumero(romano string) int {
+func ConverterNumero(romano string) int {
 
 	var resultado, unidadeAcumulada int
 
@@ -96,7 +91,7 @@ func ObterMaiorNum(lista []string) (string, int) {
 	maiorNumRom := ""
 	maiorNumInt := 0
 	for _, num := range lista {
-		numConvertido := converterNumero(num)
+		numConvertido := ConverterNumero(num)
 		if numConvertido > maiorNumInt {
 			maiorNumInt = numConvertido
 			maiorNumRom = num
@@ -116,7 +111,7 @@ func Search(c *gin.Context) {
 
 	// listaRomanos := obterListaRomanos("AXXXBLXZMMDLXXVIII")
 	// fmt.Println(ObterMaiorNum(listaRomanos))
-	listaRomanos := obterListaRomanos(string(requestBody.Text))
+	listaRomanos := ObterListaRomanos(string(requestBody.Text))
 
 	// respBody := ResponsetBody{}
 	// respBody.Number = requestBody.Text
