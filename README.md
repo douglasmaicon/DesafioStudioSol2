@@ -1,5 +1,3 @@
-# Desafio Backend StudioSOL
-
 # Maior número romano em uma palavra
 
 Joaquim é um jovem estudante que pretende ajudar seus colegas de classe a resolver um problema de
